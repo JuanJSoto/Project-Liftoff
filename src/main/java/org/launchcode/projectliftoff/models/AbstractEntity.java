@@ -1,11 +1,12 @@
 package org.launchcode.projectliftoff.models;
 
-
-import javax.persistence.GeneratedValue;
+import javax.persistence.*;
 import javax.persistence.Id;
 import java.util.Objects;
 
+//@MappedSuperClass
 public class AbstractEntity {
+    // Juan commented out ID and GeneratedValue until it is ready
     @Id
     @GeneratedValue
     private int id;

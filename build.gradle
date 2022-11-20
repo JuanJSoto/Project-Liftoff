@@ -8,6 +8,8 @@ group = 'org.launchcode'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
+
+
 repositories {
 	mavenCentral()
 }
@@ -19,9 +21,14 @@ dependencies {
 	implementation 'mysql:mysql-connector-java'
 	implementation 'org.springframework.boot:spring-boot-starter-validation:2.4.0'
 
+
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation("org.jmockit:jmockit:1.49")
+	// https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api
+	implementation 'javax.persistence:javax.persistence-api:2.2'
+
+
 }
 
 tasks.named('test') {
