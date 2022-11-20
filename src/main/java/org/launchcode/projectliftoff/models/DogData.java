@@ -39,17 +39,16 @@ public class DogData {
         } else {
             theValue = dog.getBreed().toString();
         }
-
         return theValue;
     }
 
 
-    public static ArrayList<Dog> findByValue(String value, Iterable<Dog> allJobs) {
+    public static ArrayList<Dog> findByValue(String value, Iterable<Dog> allDogs) {
         String lower_val = value.toLowerCase();
 
         ArrayList<Dog> results = new ArrayList<>();
 
-        for (Dog dog : allJobs) {
+        for (Dog dog : allDogs) {
 
             if (dog.getName().toLowerCase().contains(lower_val)) {
                 results.add(dog);
