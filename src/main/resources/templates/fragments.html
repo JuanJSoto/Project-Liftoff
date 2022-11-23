@@ -8,25 +8,22 @@
     <link th:href="@{/css/petapp.css}" rel="stylesheet" />
     <script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
 
-    <title th:text="'Find-A-Pet' + ${title == null ? '' : ' :: ' + title}">Find-A-Pet</title>
+    <title th:text="'Find-A-Friend' + ${title == null ? '' : ' :: ' + title}">Find-A-Friend</title>
 </head>
 
 <body>
 
-<div th:fragment="page-header" class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
+<nav th:fragment="page-header" class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-header">
-            <a th:href="@{/}" class="navbar-brand">Find-A-Pet</a>
+            <img th:src="@{/images/paw3.png}" class="logo-image" width="90" height="80" alt="">
+            <a th:href="@{/}" class="navbar-brand">Find-A-Friend</a>
         </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a th:href="@{/search}">Search</a></li>
-                <li><a th:href="@{/favorites}">Saved Pets</a></li>
-                <li><a th:href="@{/login-register}">Login/Register</a></li>
+            <ul class="navbar-nav">
+                <li><a th:href="@{/search}" class="list-item">Search</a></li>
+                <li><a th:href="@{/favorites}" class="list-item">Saved Pets</a></li>
+                <li><a th:href="@{/login-register}" class="list-item">Login/Register</a></li>
             </ul>
-        </div>
-    </div>
-</div>
+</nav>
 
 </body>
 </html>
