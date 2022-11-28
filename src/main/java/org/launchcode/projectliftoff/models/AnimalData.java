@@ -2,7 +2,7 @@ package org.launchcode.projectliftoff.models;
 
 import java.util.ArrayList;
 
-public class DogData {
+public class DogData extends AbstractEntity {
 
     public static ArrayList<Dog> findByColumnAndValue(String column, String value, Iterable<Dog> allDogs) {
 
