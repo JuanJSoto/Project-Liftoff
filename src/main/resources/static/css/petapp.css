@@ -1,94 +1,87 @@
-.body-content {
-    margin-top: 110px;
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
 }
 
-td, th {
-    padding: 10px;
-}
-
-th {
-    text-align: center;
-}
-
-td {
-    vertical-align: top;
-}
-
-tr:nth-child(odd) {
-    background-color: #e4e4e4;
-}
-
-.centeredTable {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-table.listing {
-    margin: 30px auto;
-    border: 1px solid #e4e4e4;
-    width: 80%;
-}
-
-table.job-listing td:first-child {
-    font-weight: bold;
-}
-
-table.job-listing td:last-child {
-    width: 80%;
-}
-
-label {
-    margin-right: 15px;
-}
-
-.centered {
-    text-align: center;
+body {
+    background-color: #fcf2e4;
 }
 
 h1 {
-    padding: 50px;
+    padding: 0px;
 }
 
 .navbar {
-    background-color: purple;
+    background-color: #b276c1;
     height: 150px;
-    font-family: Ink Free !important;
+    font-family: Ink Free;
+    width: 100%;
 }
 
 .navbar-nav {
     list-style: none !important;
-    margin-top: 55px !important;
 }
 
 .list-item {
-   color: red !important;
+   color: #fcf2e4;
    font-size: 25px;
-   margin-left: 30px !important;
+   text-decoration: none;
+   float: right;
+   display: inline-block;
+   padding: 15px;
+   margin-top: 45px;
  }
 
 .list-item:hover {
-  color: blue !important;
-  text-decoration: none !important;
+  color: black;
+  text-decoration: none;
 }
 
-.navbar-collapse.collapse {
-    margin-top: 65px !important;
-}
 
 .navbar-brand {
-    color: red !important;
+    color: #fcf2e4;
     font-size: 75px;
+    text-decoration: none;
+    margin-left: 120px;
+    margin-top: 30px;
+    display: inline-block;
+    position: absolute;
 }
 
 .navbar-brand:hover {
-    color: blue !important;
+    color: black;
 }
 
 .navbar-header {
-    display: flex !important;
+    float: left;
+    margin-top: 35px;
 }
 
 .logo-image {
-    margin-top: 25px;
-    margin-left: 35px;
+    margin-left: 20px;
+    margin-top: 30px !important;
+    position: absolute;
+}
+
+
+
+.home-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+    padding: 25px;
+}
+
+.intro {
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    font-family: Ink Free;
+    color: #b276c1;
 }
