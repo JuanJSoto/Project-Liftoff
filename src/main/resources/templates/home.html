@@ -6,12 +6,16 @@
 <body>
 
     <div th:replace="fragments :: page-header"></div>
-    <div class="container body-content">
-        <h1></h1>
-        <img th:src="@{/images/zelenia.jpg}" class="home-image">
-        <p class="intro">
-            <strong>Words will go here.....</strong>
-        </p>
+    <div class="slideshow">
+        <div class="wrapper">
+            <img th:src="@{/images/zelenia2.jpg}">
+            <img th:src="@{/images/spooky.jpg}">
+            <img th:src="@{/images/ham2.jpg}">
+            <img th:src="@{/images/birds.jpg}">
+        </div>
+    </div>
+    <div class="intro">
+        <strong>Words will go here.....</strong>
     </div>
 
 </body>
