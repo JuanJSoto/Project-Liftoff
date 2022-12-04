@@ -37,26 +37,28 @@ function fetchAnimals() {
   .then(responseJson => displayPets(responseJson))
 }
 
+
 function displayPets(responseJson) {
   let html = '';
   for (let i=0; i<responseJson.animals.length; i++) {
-    const animal = responseJson.animals[i];
-    if (animal.photos.length > 0) {
-      html += `<img src='${responseJson.animals[i].photos[0].small}' />`;
+  // for each loop?
+    const {photos, contact, url} = responseJson.animals[i];
+    const hasContactInfo = contact.email || contact.phone;
+    const isValid = photos.length>0 && hasContactInfo;
+    if (isValid) {
+      html += `<img src='${photos[0].small}' />`;
+//  destructure or javascript destructure
+      if(contact.email) {
+        html += `<p>'${contact.email}'</p>`;
+      }
+      if(contact.phone) {
+        html += `<p>'${contact.phone}'</p>`;
+      }
+      if(contact.address1) {
+        html += `<p>'${contact.address1}'</p>`;
+      }
     }
-
-    if(animal.contact.email) {
-      html += `<br/><p>${animal.contact.email}</p>`;
-    }
-
-    if(animal.contact.phone) {
-      html += `<br/><p>${animal.contact.phone}</p>`;
-    }
-
-    if(animal.contact.address1) {
-      html += `<br/><p>${animal.contact.address1}</p>`;
-    }
-  }
+}
   document.getElementById("petResults").innerHTML = html;
   console.log('#petResults');
 }
