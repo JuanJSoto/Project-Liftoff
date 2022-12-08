@@ -6,13 +6,26 @@
     font-size: 100%;
     vertical-align: baseline;
     background: transparent;
+
 }
 
 body {
     background-color: #fcf2e4;
+    font-size: 25px;
+    font-family: Ink Free;
+    color: #b276c1;
+}
+
+.container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 15px;
 }
 
 
+/*navbar css*/
 
 .navbar {
     background-color: #b276c1;
@@ -65,6 +78,7 @@ body {
 }
 
 
+/*home page css*/
 
 .home-image {
     display: block;
@@ -75,24 +89,19 @@ body {
 }
 
 .intro {
-    display: block;
-    text-align: center;
-    font-size: 25px;
-    font-family: Ink Free;
-    color: #b276c1;
+
 }
 
 
+/*slideshow css*/
 
 .slideshow{
     width: 950px;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
+    position: relative;
     overflow: hidden;
     border-radius: 8px;
     box-shadow: -1px 5px 15px black;
+    display: inline-block;
 }
 
 /*Area of images*/
@@ -102,7 +111,7 @@ body {
     animation: slide 20s infinite;
 }
 
-img{
+.ssimage{
     width: 100%;
 }
 /*Animation activated by keyframes*/
@@ -131,4 +140,33 @@ img{
     100%{
         transform: translateX(-300%);
     }
+}
+
+
+.search-image {
+    width: 950px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: -1px 5px 15px black;
+}
+
+.textbox {
+    border: 2px solid #b276c1;
+}
+
+.textbox::placeholder {
+    font-family: Ink Free;
+    font-size: 22px;
+}
+
+.textbox::-ms-input-placeholder {
+    font-family: Ink Free;
+}
+
+.btn {
+    border-left: 10px solid #b276c1;
+    border-right: 10px solid #b276c1;
+    border-top: 1px solid #b276c1;
+    border-bottom: 1px solid #b276c1;
+    background: #b276c1;
 }

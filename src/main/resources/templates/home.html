@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/">
 
-<head th:replace="fragments :: head"></head>
+<head th:replace="fragments :: head">
+
+</head>
 
 <body>
 
     <div th:replace="fragments :: page-header"></div>
+    <div class="container">
     <div class="slideshow">
         <div class="wrapper">
-            <img th:src="@{/images/zelenia2.jpg}">
-            <img th:src="@{/images/spooky.jpg}">
-            <img th:src="@{/images/ham2.jpg}">
-            <img th:src="@{/images/birds.jpg}">
+            <img th:src="@{/images/zelenia2.jpg}" class="ssimage">
+            <img th:src="@{/images/spooky.jpg}" class="ssimage">
+            <img th:src="@{/images/ham2.jpg}" class="ssimage">
+            <img th:src="@{/images/birds.jpg}" class="ssimage">
         </div>
     </div>
-    <div class="intro">
+    </div>
+    <div class="container">
         <strong>Words will go here.....</strong>
     </div>
 
