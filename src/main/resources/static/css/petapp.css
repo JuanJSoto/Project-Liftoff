@@ -44,3 +44,9 @@ label {
 .centered {
     text-align: center;
 }
+
+#map{
+    width: 90%;
+    height: 400px;
+    visibility:hidden;
+    }
