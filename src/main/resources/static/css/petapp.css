@@ -108,7 +108,7 @@ body {
 .wrapper{
     width: 100%;
     display: flex;
-    animation: slide 20s infinite;
+    animation: slide 18s infinite;
 }
 
 .ssimage{
@@ -146,7 +146,7 @@ body {
 /*search page css*/
 
 .search-image {
-    width: 950px;
+    width: 1650px;
     overflow: hidden;
     border-radius: 8px;
     box-shadow: -1px 5px 15px black;
