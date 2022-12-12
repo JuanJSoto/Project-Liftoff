@@ -104,7 +104,7 @@ body {
     display: inline-block;
 }
 
-/*Area of images*/
+/*area of images*/
 .wrapper{
     width: 100%;
     display: flex;
@@ -114,7 +114,7 @@ body {
 .ssimage{
     width: 100%;
 }
-/*Animation activated by keyframes*/
+/*animation*/
 @keyframes slide{
     0%{
         transform: translateX(0);
@@ -143,6 +143,8 @@ body {
 }
 
 
+/*search page css*/
+
 .search-image {
     width: 950px;
     overflow: hidden;
@@ -169,4 +171,86 @@ body {
     border-top: 1px solid #b276c1;
     border-bottom: 1px solid #b276c1;
     background: #b276c1;
+}
+
+
+/*create account form css*/
+
+.createForm {
+    display: table:
+}
+
+.createP {
+    display: table-row;
+}
+
+.createLabel {
+    display: table-cell;
+    padding: 8px;
+}
+
+input {
+    display: table-cell;
+}
+
+.createUser {
+    font-size: 30px;
+    text-align: left;
+    margin-left: 150px;
+    margin-top: 50px;
+}
+
+.createBtn {
+    border-left: 10px solid #b276c1;
+    border-right: 10px solid #b276c1;
+    border-top: 1px solid #b276c1;
+    border-bottom: 1px solid #b276c1;
+    background: #b276c1;
+    margin-left: 250px;
+}
+
+/*login form css*/
+
+.loginForm {
+    display: table:
+}
+
+.loginP {
+    display: table-row;
+}
+
+.loginLabel {
+    display: table-cell;
+    padding: 8px;
+}
+
+input {
+    display: table-cell;
+}
+
+.userLogin {
+    font-size: 30px;
+    text-align: left;
+    margin-left: 150px;
+    margin-top: 50px;
+}
+
+.loginBtn {
+    border-left: 10px solid #b276c1;
+    border-right: 10px solid #b276c1;
+    border-top: 1px solid #b276c1;
+    border-bottom: 1px solid #b276c1;
+    background: #b276c1;
+    margin-left: 260px;
+}
+
+.outer {
+    float: left;
+}
+
+.login-image {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: -1px 5px 15px black;
+    height: 770px;
 }
