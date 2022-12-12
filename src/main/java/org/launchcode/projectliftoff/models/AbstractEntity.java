@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.persistence.Id;
 import java.util.Objects;
 
-//@MappedSuperClass
+@MappedSuperclass
 public class AbstractEntity {
     // Juan commented out ID and GeneratedValue until it is ready
     @Id

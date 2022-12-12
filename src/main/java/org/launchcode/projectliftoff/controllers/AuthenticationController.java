@@ -4,6 +4,7 @@ import org.launchcode.projectliftoff.data.UserRepository;
 import org.launchcode.projectliftoff.models.User;
 import org.launchcode.projectliftoff.models.dto.LoginFormDTO;
 import org.launchcode.projectliftoff.models.dto.RegisterFormDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -19,6 +20,7 @@ import java.util.Optional;
 @Controller
 public class AuthenticationController {
 
+    @Autowired
     UserRepository userRepository;
 
     private static final String userSessionKey = "user";
@@ -62,7 +64,7 @@ public class AuthenticationController {
         User existingUser = userRepository.findByUsername(registerFormDTO.getUsername());
 
         if (existingUser != null) {
-            errors.rejectValue("username", "username.alreadyexists", "A user with that username already exists");
+            errors.rejectValue("username", "username.already-exists", "A user with that username already exists");
             model.addAttribute("title", "Register");
             return "login-register";
         }
