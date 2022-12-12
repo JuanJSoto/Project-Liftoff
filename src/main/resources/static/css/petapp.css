@@ -254,3 +254,43 @@ input {
     box-shadow: -1px 5px 15px black;
     height: 770px;
 }
+
+/*pet details page css*/
+
+.details-image {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: -1px 5px 15px black;
+    height: 770px;
+}
+
+.petDetails {
+    padding: 35px;
+    margin-top: 20px;
+    font-size: 25px;
+    text-align: left;
+    display: table;
+    font-weight: bold;
+    border: 2px dotted #b276c1;
+    width: 600px;
+}
+
+.traitName {
+    display: table-row;
+    padding: 5px;
+}
+
+.traitValue {
+    display: table-cell;
+}
+
+.mapsAPI {
+    margin-top: 400px;
+    font-size: 25px;
+    text-align: center;
+    display: table;
+    font-weight: bold;
+    border: 2px dotted #b276c1;
+    width: 500px;
+    height: 350px;
+}
