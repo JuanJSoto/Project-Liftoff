@@ -3,7 +3,7 @@ package org.launchcode.projectliftoff.models;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-public class Animals extends AbstractEntity {
+public  class Animals extends AnimalData {
     @NotBlank(message = "Name is required")
     @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
     public String name;

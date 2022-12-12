@@ -10,6 +10,9 @@ public class Cat extends Animals {
     public Cat(String name, int age, String color, String breed, String location) {
         super(name, age, color, breed, location);
     }
+    public List<Cat> getCats() {
+        return cats;
+    }
 
 
 }
