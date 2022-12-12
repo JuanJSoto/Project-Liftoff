@@ -1,7 +1,9 @@
 package org.launchcode.projectliftoff.models;
 
+import javax.persistence.Entity;
 import java.util.ArrayList;
 
+@Entity
 public class DogData {
 
     public static ArrayList<Dog> findByColumnAndValue(String column, String value, Iterable<Dog> allDogs) {
