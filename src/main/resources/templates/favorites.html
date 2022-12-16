@@ -7,7 +7,18 @@
 
 <div th:replace="fragments :: page-header"></div>
 <div class="container body-content">
-    <h1>SAVED PETS PAGE!</h1>
+    <h1>SAVED FAVORITE PETS PAGE!</h1>
+
+    <form method="post" style="..." th:field="${favorites}">
+       <div class="form-group">
+           <label th:for="animal">Animal</label>
+           <input class="form-control" th:field="*{animal}" />
+           <span th:errors="*{animal}" class="error"></span>
+
+       </div>
+
+        <input type="submit" value="Add Favorites" />
+    </form>
 </div>
 
 </body>

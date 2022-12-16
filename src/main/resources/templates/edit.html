@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container body-content">
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<form style="max-width:600px;" action="/favorite/edit" method="post" th:object="${favorite}">
+  <div class="form-group">
+    <label th:for="*{name}">Name</label>
+    <input class="form-control" type="text" th:field="*{name}" />
+    <span th:errors="*{name}" class="error"></span>
+  </div>
+  <div class="form-group">
+    <label th:for="*{age}">Age</label>
+    <input class="form-control" type="text" th:field="*{age}"  />
+    <span th:errors="*{age}" class="error"></span>
+  </div>
+
+  <div class="form-group">
+    <label th:for="user">User</label>
+    <select th:field="*{user}" th:value="*{user.name}">
+      <option th:each="u : ${users}"
+              th:text="${u.name}"
+              th:value="${u.id}"></option> <!-- right here-->
+    </select>
+  </div>
+
+
+  <input type="hidden" name="id" th:value="*{id}" />
+  <input type="submit" value="Edit Favorite"/>
+</form>
+
+</body>
+</html>
