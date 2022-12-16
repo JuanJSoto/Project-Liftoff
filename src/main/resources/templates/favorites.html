@@ -1,25 +1,41 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org/">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 
-<body>
+<body class="container body-content">
 
-<div th:replace="fragments :: page-header"></div>
-<div class="container body-content">
-    <h1>SAVED FAVORITE PETS PAGE!</h1>
+<h1 th:text="${title}">SAVED FAVORITE PETS PAGE!</h1>
 
-    <form method="post" style="..." th:field="${favorites}">
-       <div class="form-group">
-           <label th:for="animal">Animal</label>
-           <input class="form-control" th:field="*{animal}" />
-           <span th:errors="*{animal}" class="error"></span>
+<nav th:replace="fragments :: navigation"></nav>
 
-       </div>
+<p th:unless="${favorite} and ${favorites.size()}">no favorite </p>
 
-        <input type="submit" value="Add Favorites" />
-    </form>
-</div>
+
+<table class="table">
+
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Color</th>
+        <th>Breed</th>
+        <th>Location</th>
+    </tr>
+
+    <tr th:each="favorite : ${favorites}">
+        <td th:text="${favorite.name}"></td>
+        <td th:text="${favorite.age}"></td>
+        <td th:text="${favorite.color}"></td>
+        <td th:text="${favorite.breed}"></td>
+        <td th:text="${favorite.location}"></td>
+        <td><a th:href="@{'/favorite/edit/' + ${favorite.id}}">edit</a></td>
+    </tr>
+
+</table>
+
+<nav>
+    <a href="/favorite/add">Add</a> |
+    <a href="/favorite/delete">Remove</a>
+</nav>
 
 </body>
 </html>
