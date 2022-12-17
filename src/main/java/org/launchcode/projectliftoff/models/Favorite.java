@@ -21,12 +21,17 @@ public class Favorite extends Animals {
     @ManyToMany( mappedBy = "favorites")//this is the favorites field in the user class
     private List<User> users;
 
+    public Favorite() { }
     public Favorite(String name, int age, String color, String breed, String location) {
         super(name, age, color, breed, location);
     }
 
-    @Override
-    public int getId() {
-        return id;
+    public User getUser() {
+        return user;
     }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
 }

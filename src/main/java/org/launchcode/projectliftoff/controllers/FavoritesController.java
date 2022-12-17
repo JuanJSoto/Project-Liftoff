@@ -35,7 +35,7 @@ public class FavoritesController {
 
 
     @RequestMapping(value = "delete", method = RequestMethod.GET)
-    public String displayDeleForm(Model model) {
+    public String displayDeleteForm(Model model) {
       model.addAttribute("favorites", favoriteData.findAll());
       model.addAttribute("title", "Delete Favorite");
       return "favorite/delete";
