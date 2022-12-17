@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -80,7 +77,7 @@ public class FavoritesController {
 
     }
     @RequestMapping(value = "user", method = RequestMethod.GET)
-    public String displayUsers(Model modle, @RequestParam int id) {
+    public String displayUsers(Model model, @RequestParam int id) {
 
         //finds the user and stores it in u
         User u = userData.findOne(id);

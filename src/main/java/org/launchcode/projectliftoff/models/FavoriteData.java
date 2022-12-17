@@ -8,4 +8,7 @@ import javax.transaction.Transactional;
 @Repository
 @Transactional
 public interface FavoriteData extends CrudRepository<Favorite, Integer> {
+    Favorite findOne(int id);
+
+    void delete(int favoriteId);
 }
