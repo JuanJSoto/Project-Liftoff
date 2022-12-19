@@ -1,9 +1,11 @@
 package org.launchcode.projectliftoff.models;
 
+import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-public  class Animals extends AnimalData {
+@Entity
+public class Animals extends AbstractEntity {
     @NotBlank(message = "Name is required")
     @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
     public String name;
@@ -22,6 +24,7 @@ public  class Animals extends AnimalData {
     @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
     public String location;
 
+    public Animals() { }
     public Animals(String name, int age, String color, String breed,String location) {
         this.name = name;
         this.age = age;

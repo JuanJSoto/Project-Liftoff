@@ -1,8 +1,9 @@
 package org.launchcode.projectliftoff.models;
 
+import javax.persistence.Entity;
 import java.util.ArrayList;
 import java.util.List;
-
+@Entity
 public class Cat extends Animals {
 
     private List<Cat> cats = new ArrayList<>();
