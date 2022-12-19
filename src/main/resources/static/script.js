@@ -43,25 +43,34 @@ function displayPets(responseJson) {
   for (let i=0; i<responseJson.animals.length; i++) {
   // for each loop?
     const {photos, contact, url, id} = responseJson.animals[i];
-    const hasContactInfo = contact.email || contact.phone;
+    const hasContactInfo = (contact.email || contact.phone) && contact.address.address1;
     const isValid = photos.length>0 && hasContactInfo;
     if (isValid) {
       html += `<a href="pet-details/?=${id}"><img src='${photos[0].small}'></a>`;
 //  destructure or javascript destructure
       if(contact.email) {
-        html += `<p>'${contact.email}'</p>`;
+        html += `<p>${contact.email}</p>`;
       }
       if(contact.phone) {
-        html += `<p>'${contact.phone}'</p>`;
+        html += `<p>${contact.phone}</p>`;
       }
-      if(contact.address1) {
-        html += `<p>'${contact.address1}'</p>`;
+      if(contact.address) {
+      // null coalessing
+        html += `<p>
+        ${contact.address.address1}
+        ${contact.address.address2 ? contact.address.address2 : ''}<br>
+        ${contact.address.city}, ${contact.address.state}, ${contact.address.postcode}
+        </p>`;
       }
+      //google maps api?
+      //{address1: "237 Centerville Rd Ste7", address2: null, city: "Lancaster", state: "PA",…}
+
     }
 }
   document.getElementById("petResults").innerHTML = html;
   console.log('#petResults');
 }
+
 
 function watchForm() {
     let button = document.getElementById("submitButton");
@@ -70,6 +79,8 @@ function watchForm() {
     fetchAnimals();
   });
 }
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log('App loaded! Waiting for submit!');
