@@ -86,37 +86,4 @@ public class FavoritesController {
         model.addAttribute("title", "Favorites in User: " + u.getName());
         return "favorite/index";
     }
-
-    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
-    //need to get to favorite/edit/0
-    public String displayEditForm( Model model, @PathVariable int id) {
-        Favorite favorite = favoriteData.findOne(id);
-        model.addAttribute(favorite);
-        model.addAttribute("users", userData.findAll());
-        model.addAttribute("title", "Edit Favorite" + favorite.getName());
-        return "favorite/edit";
-    }
-
-    @RequestMapping(value = "edit", method = RequestMethod.POST)
-    public String processEditForm(@RequestParam int id, @ModelAttribute @Valid Favorite newFavorite,
-                                  Errors errors, Model model) {
-        //find the post version of @PathVariable
-        Favorite aFavorite = favoriteData.findOne(id);
-
-        if (errors.hasErrors()) {
-            model.addAttribute(aFavorite);
-            model.addAttribute("users", userData.findAll());
-            model.addAttribute("title", "Edit Favorite" + aFavorite.getName());
-            return "redirect:/favorite/edit/" + id;
-        }
-        aFavorite.setName(newFavorite.getName());
-        aFavorite.setAge(newFavorite.getAge());
-        aFavorite.setColor(newFavorite.getColor());
-        aFavorite.setBreed(newFavorite.getBreed());
-        aFavorite.setLocation(newFavorite.getLocation());
-
-        return "redirect:";
-
-    }
-
 }
