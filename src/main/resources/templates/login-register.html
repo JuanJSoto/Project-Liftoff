@@ -36,17 +36,21 @@
 </div>
 
 <div class="container">
-    <form class='userLogin'>
+    <form class='userLogin' method="post">
         <h2 style="text-decoration: underline">Already have an Account?</h2>
         <br>
         <div class='loginForm'>
             <p class="loginP">
-                <label class="loginLabel" for='loginUsername'>Username:</label>
-                <input type='text' id='loginUsername' class='textbox' placeholder=' Username'>
+                <label th:for="username" class="loginLabel">Username
+                    <input class="textbox" field="${loginFormDTO.username}">
+                </label>
+            <p class="error" errors="${loginFormDTO.username}"></p>
             </p>
             <p class="loginP">
-                <label class="loginLabel" for="loginPassword">Password:</label>
-                <input type="text" id="loginPassword" class="textbox" placeholder=" Password">
+                <label class="loginLabel">Password
+                    <input class="textbox" field="${loginFormDTO.password}" type="password">
+                </label>
+            <p class="error" errors="${loginFormDTO.password}"></p>
             </p>
             <br>
             <input type="submit" id='loginButton' value='Login' class='loginBtn' style="font-family: Ink Free;">
