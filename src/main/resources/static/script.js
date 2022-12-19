@@ -42,11 +42,11 @@ function displayPets(responseJson) {
   let html = '';
   for (let i=0; i<responseJson.animals.length; i++) {
   // for each loop?
-    const {photos, contact, url} = responseJson.animals[i];
+    const {photos, contact, url, id} = responseJson.animals[i];
     const hasContactInfo = contact.email || contact.phone;
     const isValid = photos.length>0 && hasContactInfo;
     if (isValid) {
-      html += `<img src='${photos[0].small}' />`;
+      html += `<a href="pet-details/?=${id}"><img src='${photos[0].small}'></a>`;
 //  destructure or javascript destructure
       if(contact.email) {
         html += `<p>'${contact.email}'</p>`;
