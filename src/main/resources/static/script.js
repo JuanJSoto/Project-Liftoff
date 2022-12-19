@@ -42,22 +42,25 @@ function displayPets(responseJson) {
   let html = '';
   for (let i=0; i<responseJson.animals.length; i++) {
   // for each loop?
-    const {photos, contact, url, id} = responseJson.animals[i];
+    const {photos, contact, url, id, name} = responseJson.animals[i];
     const hasContactInfo = (contact.email || contact.phone) && contact.address.address1;
     const isValid = photos.length>0 && hasContactInfo;
     if (isValid) {
-      html += `<a href="pet-details/?=${id}"><img src='${photos[0].small}'></a>`;
+      html += `<a href="pet-details/?=${id}"><img src='${photos[0].medium}'></a>`;
 //  destructure or javascript destructure
+      if(name) {
+        html += `<a href="pet-details/?=${id}"><p style="text-decoration: underline;">${name}</p></a>`;
+      }
       if(contact.email) {
-        html += `<p>${contact.email}</p>`;
+        html += `<p>Email: ${contact.email}</p>`;
       }
       if(contact.phone) {
-        html += `<p>${contact.phone}</p>`;
+        html += `<p>Phone: ${contact.phone}</p>`;
       }
       if(contact.address) {
       // null coalessing
-        html += `<p>
-        ${contact.address.address1}
+        html += `<p style="border-bottom: 2px dotted #b276c1; padding-bottom: 10px;">
+        Location: ${contact.address.address1}
         ${contact.address.address2 ? contact.address.address2 : ''}<br>
         ${contact.address.city}, ${contact.address.state}, ${contact.address.postcode}
         </p>`;
@@ -79,6 +82,33 @@ function watchForm() {
     fetchAnimals();
   });
 }
+
+
+
+//function displayPetDetails(responseJson) {
+//  let html = '';
+//  for (let i=0; i<responseJson.animals.length; i++) {
+//  // for each loop?
+//    const {photos, contact, url, id} = responseJson.animals[i];
+//    const hasContactInfo = contact.email || contact.phone;
+//    const isValid = photos.length>0 && hasContactInfo;
+//    if (isValid) {
+//      html += `<a href="pet-details/?=${id}"><img src='${photos[0].small}'></a>`;
+//      if(contact.email) {
+//        html += `<p>'${contact.email}'</p>`;
+//      }
+//      if(contact.phone) {
+//        html += `<p>'${contact.phone}'</p>`;
+//      }
+//      if(contact.address1) {
+//        html += `<p>'${contact.address1}'</p>`;
+//      }
+//    }
+//}
+//  document.getElementById("petResults").innerHTML = html;
+//  console.log('#petResults');
+//}
+
 
 
 
