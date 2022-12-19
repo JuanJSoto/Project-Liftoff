@@ -8,8 +8,19 @@
 <body>
 
     <div th:replace="fragments :: page-header"></div>
-    <div class="container body-content">
-        <h1>HOME PAGE!</h1>
+
+    <div class="container">
+        <div class="slideshow">
+            <div class="wrapper">
+                <img th:src="@{/images/zelenia2.jpg}" class="ssimage">
+                <img th:src="@{/images/spooky.jpg}" class="ssimage">
+                <img th:src="@{/images/ham2.jpg}" class="ssimage">
+                <img th:src="@{/images/birds.jpg}" class="ssimage">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <strong>Intro/site description here.....</strong>
     </div>
 
 </body>

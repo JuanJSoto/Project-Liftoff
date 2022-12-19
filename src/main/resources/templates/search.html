@@ -11,28 +11,35 @@
 <body>
 
 <div th:replace="fragments :: page-header"></div>
-<div class="container body-content">
-    <h1>SEARCH PAGE!</h1>
+
+<div class="container">
+    <img th:src="@{/images/collage.jpg}" class="search-image" alt="">
 </div>
 
-<div class='container'>
+<div class='container' style="padding: 40px;">
     <form id='pet-form'>
-        <div class='form-group'>
+        <div class='form'>
             <label for='animal'>Select which pet type to view availability for adoption in your area as well as the weather for the same location!</label>
-            <p>*Some responses will be displayed multiple times from PetFinder.com!</p>
-            <p>**Not all pets have an email, phone number, and address!</p>
-            <select id='animal' class='form-control form-control-lg mb-3'>
-                <option value='dog'>Dog</option>
-                <option value='cat'>Cat</option>
+            <p style="font-size: 18px;">*Some responses will be displayed multiple times from PetFinder.com! Not all pets have an email, phone number, and address!*</p>
+            <select id='animal' style="font-family: Ink Free;">
+                <option value='dog'>Dogs</option>
+                <option value='cat'>Cats</option>
             </select>
-            <input type='text' id='zip' class='form-control form-control-lg' placeholder='Enter your desired location'>
-            <input type="submit" id='submitButton' value='Find' class='btn btn-dark btn-lg btn-block mt-3'>
+            <input type='text' id='zip' class='textbox' placeholder=' City/Zipcode'>
+            <input type="submit" id='submitButton' value='Find' class='btn' style="font-family: Ink Free;">
         </div>
     </form>
 </div>
 
+             
+<div id='petResults'>
+    <!--<script src="Project-Liftoff\src\main\resources\static\script.js"></script>-->
+    <!--<script th:src="@{/script.js}"></script>-->
+    <script src="../script.js"></script>
+</div>
 
-<script
+
+<!-- <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOuF8T4XovaUYJeaxH_gbBGXvzI67OH78&callback=initMap&v=weekly"
         defer>
 </script>
@@ -43,7 +50,7 @@
 
 <!--<script src="Project-Liftoff\src\main\resources\static\script.js"></script>-->
 <!--<script th:src="@{/script.js}"></script>-->
-<script src="../script.js"></script>
+<!-- <script src="../script.js"></script> -->
 
 </body>
 </html>

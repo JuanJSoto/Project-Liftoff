@@ -1,48 +1,304 @@
-.body-content {
-    margin-top: 72px;
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+
 }
 
-td, th {
-    padding: 10px;
+body {
+    background-color: #fcf2e4;
+    font-size: 25px;
+    font-family: Ink Free;
+    color: #b276c1;
 }
 
-th {
-    text-align: center;
-}
-
-td {
-    vertical-align: top;
-}
-
-tr:nth-child(odd) {
-    background-color: #e4e4e4;
-}
-
-.centeredTable {
+.container {
+    display: block;
     margin-left: auto;
     margin-right: auto;
-}
-
-table.job-listing {
-    margin: 30px auto;
-    border: 1px solid #e4e4e4;
-    width: 80%;
-}
-
-table.job-listing td:first-child {
-    font-weight: bold;
-}
-
-table.job-listing td:last-child {
-    width: 80%;
-}
-
-label {
-    margin-right: 15px;
-}
-
-.centered {
     text-align: center;
+    padding: 15px;
+}
+
+
+/*navbar css*/
+
+.navbar {
+    background-color: #b276c1;
+    height: 150px;
+    font-family: Ink Free;
+    width: 100%;
+}
+
+.navbar-nav {
+    list-style: none !important;
+}
+
+.list-item {
+   color: #fcf2e4;
+   font-size: 25px;
+   text-decoration: none;
+   float: right;
+   display: inline-block;
+   padding: 15px;
+   margin-top: 45px;
+ }
+
+.list-item:hover {
+  color: black;
+  text-decoration: none;
+}
+
+
+.title-header {
+    color: #fcf2e4;
+    font-size: 75px;
+    text-decoration: none;
+    margin-left: 120px;
+    margin-top: 30px;
+    display: inline-block;
+    position: absolute;
+}
+
+.navbar-header {
+    float: left;
+    margin-top: 35px;
+}
+
+.logo-image {
+    margin-left: 20px;
+    margin-top: 30px !important;
+    position: absolute;
+    width: 90px !important;
+    height: 80px !important;
+}
+
+
+/*home page css*/
+
+.home-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+    padding: 25px;
+}
+
+.intro {
+
+}
+
+
+/*slideshow css*/
+
+.slideshow{
+    width: 950px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: -1px 5px 15px black;
+    display: inline-block;
+}
+
+/*area of images*/
+.wrapper{
+    width: 100%;
+    display: flex;
+    animation: slide 18s infinite;
+}
+
+.ssimage{
+    width: 100%;
+}
+/*animation*/
+@keyframes slide{
+    0%{
+        transform: translateX(0);
+    }
+    25%{
+        transform: translateX(0);
+    }
+    30%{
+        transform: translateX(-100%);
+    }
+    50%{
+        transform: translateX(-100%);
+    }
+    55%{
+        transform: translateX(-200%);
+    }
+    75%{
+        transform: translateX(-200%);
+    }
+    80%{
+        transform: translateX(-300%);
+    }
+    100%{
+        transform: translateX(-300%);
+    }
+}
+
+
+/*search page css*/
+
+.search-image {
+    width: 1650px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: -1px 5px 15px black;
+}
+
+.textbox {
+    border: 2px solid #b276c1;
+}
+
+.textbox::placeholder {
+    font-family: Ink Free;
+    font-size: 22px;
+}
+
+.textbox::-ms-input-placeholder {
+    font-family: Ink Free;
+}
+
+.btn {
+    border-left: 10px solid #b276c1;
+    border-right: 10px solid #b276c1;
+    border-top: 1px solid #b276c1;
+    border-bottom: 1px solid #b276c1;
+    background: #b276c1;
+}
+
+
+/*create account form css*/
+
+.createForm {
+    display: table:
+}
+
+.createP {
+    display: table-row;
+}
+
+.createLabel {
+    display: table-cell;
+    padding: 8px;
+}
+
+input {
+    display: table-cell;
+}
+
+.createUser {
+    font-size: 30px;
+    text-align: left;
+    margin-left: 150px;
+    margin-top: 50px;
+}
+
+.createBtn {
+    border-left: 10px solid #b276c1;
+    border-right: 10px solid #b276c1;
+    border-top: 1px solid #b276c1;
+    border-bottom: 1px solid #b276c1;
+    background: #b276c1;
+    margin-left: 250px;
+}
+
+/*login form css*/
+
+.loginForm {
+    display: table:
+}
+
+.loginP {
+    display: table-row;
+}
+
+.loginLabel {
+    display: table-cell;
+    padding: 8px;
+}
+
+input {
+    display: table-cell;
+}
+
+.userLogin {
+    font-size: 30px;
+    text-align: left;
+    margin-left: 150px;
+    margin-top: 50px;
+}
+
+.loginBtn {
+    border-left: 10px solid #b276c1;
+    border-right: 10px solid #b276c1;
+    border-top: 1px solid #b276c1;
+    border-bottom: 1px solid #b276c1;
+    background: #b276c1;
+    margin-left: 260px;
+}
+
+.outer {
+    float: left;
+}
+
+.login-image {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: -1px 5px 15px black;
+    height: 770px;
+}
+
+/*pet details page css*/
+
+.details-image {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: -1px 5px 15px black;
+    height: 770px;
+}
+
+.petDetails {
+    padding: 35px;
+    margin-top: 20px;
+    font-size: 25px;
+    text-align: left;
+    display: table;
+    font-weight: bold;
+    border: 2px dotted #b276c1;
+    width: 600px;
+}
+
+.traitName {
+    display: table-row;
+    padding: 5px;
+}
+
+.traitValue {
+    display: table-cell;
+}
+
+.mapsAPI {
+    margin-top: 400px;
+    font-size: 25px;
+    text-align: center;
+  
+/* <<<<<<< design */
+    display: table;
+    font-weight: bold;
+    border: 2px dotted #b276c1;
+    width: 500px;
+    height: 350px;
+}
+
+/* 
+
 }
 
 #map{
@@ -50,3 +306,5 @@ label {
     height: 400px;
     visibility:hidden;
     }
+
+ */

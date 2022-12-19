@@ -4,29 +4,23 @@
 <head th:fragment="head">
 
     <!-- Bootstrap stylesheets and script -->
-    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
     <link th:href="@{/css/petapp.css}" rel="stylesheet" />
 <!--    <script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>-->
 
-    <title th:text="'Find-A-Pet' + ${title == null ? '' : ' :: ' + title}">Find-A-Pet</title>
+    <title th:text="'Find-A-Friend' + ${title == null ? '' : ' :: ' + title}">Find-A-Friend</title>
 </head>
 
 <body>
 
-<div th:fragment="page-header" class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <a th:href="@{/}" class="navbar-brand">Find-A-Pet</a>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a th:href="@{/search}">Search</a></li>
-                <li><a th:href="@{/favorites}">Saved Pets</a></li>
-                <li><a th:href="@{/login-register}">Login/Register</a></li>
+<nav th:fragment="page-header" class="navbar">
+            <img th:src="@{/images/paw.png}" class="logo-image" width="90" height="80" alt="">
+            <a th:href="@{/}" class="title-header">Find-A-Friend</a>
+            <ul class="navbar-nav">
+                <li><a th:href="@{/login-register}" class="list-item">Login/Register</a></li>
+                <li><a th:href="@{/favorites}" class="list-item">Saved Pets</a></li>
+                <li><a th:href="@{/search}" class="list-item">Search</a></li>
             </ul>
-        </div>
-    </div>
-</div>
+</nav>
 
 </body>
 </html>
