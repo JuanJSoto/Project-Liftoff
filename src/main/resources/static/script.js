@@ -8,6 +8,7 @@ const petForm = document.querySelector('#pet-form');
 petForm.addEventListener('submit', fetchAnimals);
 let pets = [];
 let map;
+
 var geocoder
 document.body.addEventListener("click", e =>{
     const target = e.target;

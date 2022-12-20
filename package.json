@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/JuanJSoto/Project-Liftoff#readme",
   "dependencies": {
+    "@types/googlemaps": "^3.43.3",
     "mysql": "^2.18.1"
   }
 }

@@ -2,6 +2,8 @@ package org.launchcode.projectliftoff.controllers;
 
 import org.launchcode.projectliftoff.models.Favorite;
 import org.launchcode.projectliftoff.models.FavoriteData;
+import org.launchcode.projectliftoff.models.User;
+import org.launchcode.projectliftoff.models.UserData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,22 +14,21 @@ import javax.validation.Valid;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = "favorite")
 public class FavoritesController {
 
     @Autowired //should be given an instance of this class by framework
     private FavoriteData favoriteData;
 
     @Autowired
-    private UserData userdata;
+    private UserData userData;
 
     //Request path: /favorite
-    @RequestMapping(value = "")
+    @RequestMapping(value = "favorite", method = RequestMethod.GET)
     public String index(Model model) {
 
         model.addAttribute("favorites", favoriteData.findAll());
         model.addAttribute("title", "My favorites");
-        return "favorite/index";
+        return "favorite";
     }
 
 
@@ -35,15 +36,15 @@ public class FavoritesController {
     public String displayDeleteForm(Model model) {
       model.addAttribute("favorites", favoriteData.findAll());
       model.addAttribute("title", "Delete Favorite");
-      return "favorite/delete";
+      return "delete";
     }
 
     //Request path: favorites/delete
-    @RequestMapping(value = "add", method = RequestMethod.POST)
+    @RequestMapping(value = "delete", method = RequestMethod.POST)
     public String processDeletedFavorite(@RequestParam int[] favoriteIds) {
 
-        for(int favoriteId: favoritesIds) {
-            favoriteData.delete(favoriteId);
+        for(int favoriteId: favoriteIds) {
+            favoriteData.deleteById(favoriteId);
         }
         return "redirect:";
     }
@@ -54,8 +55,8 @@ public class FavoritesController {
 
         model.addAttribute("title", "Add Favorite");
         model.addAttribute(new Favorite());
-        model.addAttribute("users", userdata.findAll());
-        return "favorite/add";
+        model.addAttribute("users", userData.findAll());
+        return "add";
     }
 
     //Request path: favorite/add
@@ -66,10 +67,10 @@ public class FavoritesController {
         if (errors.hasErrors()) {
             model.addAttribute("users", userData.findAll());
             model.addAttribute("title", "Add Favorite");
-            return "favorite/add";
+            return "add";
         }
 
-        User u = userData.findOne(userId);
+        User u = userData.findById(userId).orElse(new User());
         newFavorite.setUser(u);
         favoriteData.save(newFavorite);
         //redirect to favorite/
@@ -80,10 +81,10 @@ public class FavoritesController {
     public String displayUsers(Model model, @RequestParam int id) {
 
         //finds the user and stores it in u
-        User u = userData.findOne(id);
+        User u = userData.findById(id).orElse(new User());
         List<Favorite> favorites = u.getFavorites();
         model.addAttribute("favorites", favorites);
-        model.addAttribute("title", "Favorites in User: " + u.getName());
-        return "favorite/index";
+        model.addAttribute("title", "Favorites in User: " + u.getUsername());
+        return "favorite";
     }
 }
