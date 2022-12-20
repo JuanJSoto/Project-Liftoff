@@ -1,0 +1,23 @@
+{
+  "name": "project-liftoff",
+  "version": "1.0.0",
+  "description": "LiftOff project due December 2022",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanJSoto/Project-Liftoff.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuanJSoto/Project-Liftoff/issues"
+  },
+  "homepage": "https://github.com/JuanJSoto/Project-Liftoff#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}

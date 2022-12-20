@@ -292,6 +292,8 @@ input {
     margin-top: 400px;
     font-size: 25px;
     text-align: center;
+  
+/* <<<<<<< design */
     display: table;
     font-weight: bold;
     border: 2px dotted #b276c1;
@@ -307,3 +309,15 @@ a {
 a:hover {
     color: black;
 }
+
+/* 
+
+}
+
+#map{
+    width: 90%;
+    height: 400px;
+    visibility:hidden;
+    }
+
+ */
