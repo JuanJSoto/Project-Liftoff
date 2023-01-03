@@ -4,9 +4,9 @@
 
 <body class="container body-content">
 
-<h1 th:text="${title}">SAVED FAVORITE PETS PAGE!</h1>
+<nav th:replace="fragments :: page-header"></nav>
 
-<nav th:replace="fragments :: navigation"></nav>
+<h1 th:text="${title}">SAVED FAVORITE PETS PAGE!</h1>
 
 <p th:unless="${favorite} and ${favorites.size()}">no favorite </p>
 
@@ -27,14 +27,14 @@
         <td th:text="${favorite.color}"></td>
         <td th:text="${favorite.breed}"></td>
         <td th:text="${favorite.location}"></td>
-        <td><a th:href="@{'/favorite/edit/' + ${favorite.id}}">edit</a></td>
+        <td><a th:href="@{'/edit/' + ${favorite.id}}">edit</a></td>
     </tr>
 
 </table>
 
 <nav>
-    <a href="/favorite/add">Add</a> |
-    <a href="/favorite/delete">Remove</a>
+    <a href="/add">Add</a> |
+    <a href="/delete">Remove</a>
 </nav>
 
 </body>

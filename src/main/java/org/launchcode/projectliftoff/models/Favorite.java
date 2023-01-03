@@ -1,6 +1,5 @@
 package org.launchcode.projectliftoff.models;
 
-import org.apache.catalina.User;
 import org.springframework.data.annotation.Id;
 
 import javax.persistence.Entity;
