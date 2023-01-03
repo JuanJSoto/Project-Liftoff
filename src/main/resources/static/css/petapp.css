@@ -64,6 +64,10 @@ body {
     position: absolute;
 }
 
+.title-header:hover {
+    color: #fcf2e4;
+}
+
 .navbar-header {
     float: left;
     margin-top: 35px;
@@ -295,6 +299,15 @@ input {
     border: 2px dotted #b276c1;
     width: 500px;
     height: 350px;
+}
+
+
+a {
+    color: #b276c1;
+}
+
+a:hover {
+    color: black;
 }
 
 /* 
