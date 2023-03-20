@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+
+<head th:replace="fragments :: head"></head>
+
+<body>
+
+<div th:replace="fragments :: page-header"></div>
+
+<div class="outer">
+<div class="container">
+        <form class='createUser'>
+            <h2 style="text-decoration: underline">Create an Account</h2>
+            <br>
+            <div class='createForm'>
+                <p class="createP">
+                    <label class="createLabel" for='nameOfUser'>Enter Your Name:</label>
+                    <input type='text' id='nameOfUser' class='textbox' placeholder=' Name'>
+                </p>
+                <p class="createP">
+                    <label class="createLabel" for="email">Enter Your Email:</label>
+                    <input type="email" id="email" class="textbox" placeholder=" Email">
+                </p>
+                <p class="createP">
+                    <label class="createLabel" for="username">Choose a Username:</label>
+                    <input type="text" id="username" class="textbox" placeholder=" Username">
+                </p>
+                <p class="createP">
+                    <label class="createLabel" for="password">Choose a Password:</label>
+                    <input type="password" id="password" class="textbox" placeholder=" Password">
+                </p>
+                <br>
+                <input type="submit" id='submitButton' value='Submit' class='createBtn' style="font-family: Ink Free;">
+            </div>
+        </form>
+</div>
+
+<div class="container">
+    <form class='userLogin' method="post">
+        <h2 style="text-decoration: underline">Already have an Account?</h2>
+        <br>
+        <div class='loginForm'>
+            <p class="loginP">
+                <label th:for="username" class="loginLabel">Username
+                    <input class="textbox" field="${loginFormDTO.username}">
+                </label>
+            <p class="error" errors="${loginFormDTO.username}"></p>
+            </p>
+            <p class="loginP">
+                <label class="loginLabel">Password
+                    <input class="textbox" field="${loginFormDTO.password}" type="password">
+                </label>
+            <p class="error" errors="${loginFormDTO.password}"></p>
+            </p>
+            <br>
+            <input type="submit" id='loginButton' value='Login' class='loginBtn' style="font-family: Ink Free;">
+        </div>
+    </form>
+</div>
+</div>
+
+<div class="container" style="position: fixed; margin-left: 925px;">
+    <img th:src="@{/images/ham.jpg}" class="login-image" alt="">
+
+<!--   
+<div class="container body-content">
+    <h1>LOGIN/REGISTRATION PAGE!</h1>
+
+    <form method="post">
+        <div class="form-group">
+            <label>Username
+                <input class="form-control" th:field="${registerFormDTO.username}" />
+            </label>
+            <p class="error" th:errors="${registerFormDTO.username}"></p>
+        </div>
+        <div class="form-group">
+            <label>Password
+                <input class="form-control" th:field="${registerFormDTO.password}" type="password" />
+            </label>
+            <p class="error" th:errors="${registerFormDTO.password}"></p>
+        </div>
+        <div class="form-group">
+            <label>Verify Password
+                <input class="form-control" th:field="${registerFormDTO.verifyPassword}" type="password" />
+            </label>
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="Register" />
+    </form>
+   -->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+
+<head th:replace="fragments :: head">
+<!--    <script th:src="@{/script.js}"></script>-->
+<!--        <script type="text/javascript" src="../script.js"></script>-->
+    <script src="../script.js"></script>
+
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOuF8T4XovaUYJeaxH_gbBGXvzI67OH78&callback=initMap&v=weekly"
+            defer>
+    </script>
+
+</head>
+
+<body>
+
+<div th:replace="fragments :: page-header"></div>
+
+<div class="container">
+    <img th:src="@{/images/collage.jpg}" class="search-image" alt="">
+</div>
+
+<div class='container' style="padding: 40px;">
+    <form id='pet-form'>
+        <div class='form'>
+            <label for='animal'>Select which pet type to view availability for adoption in your area!</label>
+            <p style="font-size: 18px;">*Some responses will be displayed multiple times from PetFinder.com! Not all pets have an email, phone number, and address!*</p>
+            <select id='animal' style="font-family: Ink Free;">
+                <option value='dog'>Dogs</option>
+                <option value='cat'>Cats</option>
+            </select>
+            <input type='text' id='zip' class='textbox' placeholder=' City/Zipcode'>
+            <input type="submit" id='submitButton' value='Find' class='btn' style="font-family: Ink Free;">
+        </div>
+    </form>
+</div>
+
+//<<<<<<< craig
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOuF8T4XovaUYJeaxH_gbBGXvzI67OH78&callback=initMap&v=weekly"
+        defer>
+</script>
+<div id='petResults'>
+//=======
+//re-reworked above
+//<div id='petResults' style="text-align: center;">
+
+//reworked above             
+//<div id='petResults'>
+
+//>>>>>>> main
+    <!--<script src="Project-Liftoff\src\main\resources\static\script.js"></script>-->
+    <!--<script th:src="@{/script.js}"></script>-->
+    <script src="../script.js"></script>
+</div>
+<div id="map"></div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org/">-->
+
+<!--<head th:replace="fragments :: head">-->
+<!--&lt;!&ndash;    <script th:src="@{/script.js}"></script>&ndash;&gt;-->
+<!--        <script type="text/javascript" th:src="@{script.js}"></script>-->
+
+
+<!--</head>-->
+
+<!--<body>-->
+<!--<header></header>-->
+<!--<div class='container'>-->
+<!--    <form id='pet-form'>-->
+<!--        <div class='form-group'>-->
+<!--            <label for='animal'>Select which pet type to view availability for adoption in your area as well as the weather for the same location!</label>-->
+<!--            <p>*Some responses will be displayed multiple times from PetFinder.com!</p>-->
+<!--            <p>**Not all pets have an email, phone number, and address!</p>-->
+<!--            <select id='animal' class='form-control form-control-lg mb-3'>-->
+<!--                <option value='dog'>Dog</option>-->
+<!--                <option value='cat'>Cat</option>-->
+<!--            </select>-->
+<!--            <input type='text' id='zip' class='form-control form-control-lg' placeholder='Enter your desired location'>-->
+<!--            <input type="submit" value='Find' class='btn btn-dark btn-lg btn-block mt-3'>-->
+<!--        </div>-->
+<!--    </form>-->
+<!--</div>-->
+<!--<div id='weatherResults'></div>-->
+
+<!--<div id='petResults'></div>-->
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">     </script>-->
+<!--<script src="src\main\resources\static\script.js"></script>-->
+<!--</body>-->
+<!--</html>-->
