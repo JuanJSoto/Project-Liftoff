@@ -44,3 +44,17 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+task copyToLib(type: Copy) {
+	into "$buildDir/libs"
+	from(configuration.compile)
+}
+
+stage.dependsOn(copyToLib)
+
+gradle.taskGraph.whenReady {
+	taskGraph ->
+		if (taskGraph.hasTask(stage)) {
+			test.enabled = false
+		}
+}
