@@ -4,6 +4,15 @@ plugins {
 	id 'java'
 }
 
+jar {
+	manifest {
+		attributes (
+				'Main-Class': 'org.launchcode.ProjectLiftoffApplication.java'
+		)
+	}
+}
+
+
 group = 'org.launchcode'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
