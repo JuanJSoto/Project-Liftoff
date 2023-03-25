@@ -7,7 +7,7 @@ plugins {
 jar {
 	manifest {
 		attributes (
-				'Main-Class': 'org.launchcode.ProjectLiftoffApplication.java'
+				'Main-Class': 'org.launchcode.projectliftoffapplication.class'
 		)
 	}
 }
@@ -43,18 +43,21 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
-}
+} // commented out to test code below
 
-task copyToLib(type: Copy) {
-	into "$buildDir/libs"
-	from(configuration.compile)
-}
-
-stage.dependsOn(copyToLib)
-
-gradle.taskGraph.whenReady {
-	taskGraph ->
-		if (taskGraph.hasTask(stage)) {
-			test.enabled = false
-		}
-}
+//task stage(dependsOn: ['build', 'clean'])
+//build.mustRunAfter clean
+//
+//task copyToLib(type: Copy) {
+//	into "$buildDir/libs"
+//	from(configuration.compile)
+//} //added code 3/23
+//
+//stage.dependsOn(copyToLib)
+//
+//gradle.taskGraph.whenReady {
+//	taskGraph ->
+//		if (taskGraph.hasTask(stage)) {
+//			test.enabled = false
+//		}
+//} //added code 3/23
