@@ -7,7 +7,7 @@ plugins {
 jar {
 	manifest {
 		attributes (
-				'Main-Class': 'org.launchcode.projectliftoffapplication.class'
+				'Main-Class': 'org.launchcode.projectliftoffapplication.java'
 		)
 	}
 }
