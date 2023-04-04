@@ -5,6 +5,8 @@ plugins {
 }
 
 jar {
+	exclude 'META-INF/MANIFEST.MF'
+
 	manifest {
 		attributes (
 				'Main-Class': 'org.launchcode.projectliftoffapplication.java'
