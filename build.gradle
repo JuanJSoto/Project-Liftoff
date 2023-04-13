@@ -8,7 +8,7 @@ jar {
 
 	manifest {
 		attributes (
-				'Main-Class': 'org.launchcode.projectliftoff.projectliftoffapplication.java'
+				'Main-Class': 'org.launchcode.projectliftoff.ProjectLiftoffApplication'
 		)
 	}
 }
