@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 @EnableAutoConfiguration
 public class ProjectLiftoffApplication {
 
+
 	public static void main(String[] args) {
 		SpringApplication.run(ProjectLiftoffApplication.class, args);
 	}
