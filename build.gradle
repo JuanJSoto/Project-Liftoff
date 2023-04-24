@@ -43,11 +43,11 @@ dependencies {
 
 //tasks.named('test') {
 //	useJUnitPlatform()
-//} commented out for testing 4-24-23 for below code
+//} trying without this overall
 
-tasks.named('bootjar') {
-	launchScript()
-}
+//tasks.named('bootjar') {
+//	launchScript()
+//} tried this code instead of ('test') and JUnitPlatform()
 
 // commented out to test code below
 
