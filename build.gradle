@@ -41,9 +41,15 @@ dependencies {
 
 }
 
-tasks.named('test') {
-	useJUnitPlatform()
-} // commented out to test code below
+//tasks.named('test') {
+//	useJUnitPlatform()
+//} commented out for testing 4-24-23 for below code
+
+tasks.named('bootjar') {
+	launchScript()
+}
+
+// commented out to test code below
 
 //task stage(dependsOn: ['build', 'clean'])
 //build.mustRunAfter clean
