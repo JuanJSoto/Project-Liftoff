@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "java -jar target/myapp.jar",
-    "heroku-postbuild": "mvn clean install"
+    "heroku-postbuild": ". gradlew build"
   },
   "repository": {
     "type": "git",
