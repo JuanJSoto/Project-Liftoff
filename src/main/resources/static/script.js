@@ -123,7 +123,7 @@ function displayPets(responseJson) {
       // null coalessing
         html += `<p style="border-bottom: 2px dotted #b276c1; padding-bottom: 10px;">
         Location: ${contact.address.address1}
-
+/*
 // lines 126-135 are reworked above
 //        html += `<p>${contact.email}</p>`;
 //      }
@@ -134,6 +134,7 @@ function displayPets(responseJson) {
 //      // null coalessing
 //        html += `<p>
 //        ${contact.address.address1}
+*/
         ${contact.address.address2 ? contact.address.address2 : ''}<br>
         ${contact.address.city}, ${contact.address.state}, ${contact.address.postcode}
         </p>`;
@@ -142,7 +143,7 @@ function displayPets(responseJson) {
       //{address1: "237 Centerville Rd Ste7", address2: null, city: "Lancaster", state: "PA",…}
 
     }
-}
+  }
   document.getElementById("petResults").innerHTML = html;
   console.log('#petResults');
 }
