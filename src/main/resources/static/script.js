@@ -123,18 +123,6 @@ function displayPets(responseJson) {
       // null coalessing
         html += `<p style="border-bottom: 2px dotted #b276c1; padding-bottom: 10px;">
         Location: ${contact.address.address1}
-/*
-// lines 126-135 are reworked above
-//        html += `<p>${contact.email}</p>`;
-//      }
-//      if(contact.phone) {
-//        html += `<p>${contact.phone}</p>`;
-//      }
-//      if(contact.address) {
-//      // null coalessing
-//        html += `<p>
-//        ${contact.address.address1}
-*/
         ${contact.address.address2 ? contact.address.address2 : ''}<br>
         ${contact.address.city}, ${contact.address.state}, ${contact.address.postcode}
         </p>`;
